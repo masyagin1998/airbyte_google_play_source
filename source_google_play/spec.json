@@ -1,0 +1,91 @@
+{
+  "documentationUrl": "https://docsurl.com",
+  "connectionSpecification": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Google Play Spec",
+    "description": "Google Play Spec schema",
+    "type": "object",
+    "required": [
+      "app_id",
+      "languages",
+      "countries",
+      "start_time"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "app_id": {
+        "description": "application unique identifier",
+        "type": "string",
+        "examples": [
+          "org.telegram.messenger"
+        ]
+      },
+      "languages": {
+        "description": "list of necessary feedback languages",
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "description": "one necessary feedback language",
+          "type": "string",
+          "examples": [
+            "en",
+            "ar"
+          ]
+        },
+        "examples": [
+          [
+            "en",
+            "ar"
+          ]
+        ]
+      },
+      "countries": {
+        "description": "list of necessary feedback countries",
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "description": "one necessary feedback country",
+          "type": "string",
+          "examples": [
+            "ae"
+          ]
+        },
+        "examples": [
+          [
+            "ae"
+          ]
+        ]
+      },
+      "start_time": {
+        "description": "start time of scraping",
+        "type": "string",
+        "format": "date-time",
+        "examples": [
+          "2016-04-10T00:27:29",
+          "2021-02-11T10:56:59"
+        ],
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$"
+      },
+      "timeout_ms": {
+        "description": "timeout between requests to API",
+        "type": "integer",
+        "minimum": 0,
+        "examples": [
+          100,
+          1000,
+          5000
+        ]
+      },
+      "max_reviews_per_req": {
+        "description": "maximal number of returned reviews per requests",
+        "type": "integer",
+        "minimum": 1,
+        "examples": [
+          100,
+          10,
+          1
+        ]
+      }
+    }
+  }
+}

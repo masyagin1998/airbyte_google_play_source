@@ -1,0 +1,13 @@
+{
+  "app_id": "org.telegram.messenger",
+  "languages": [
+    "en",
+    "ar"
+  ],
+  "countries": [
+    "ae"
+  ],
+  "start_time": "2022-03-01T00:00:00",
+  "timeout_ms": 10,
+  "max_reviews_per_req": 50
+}
